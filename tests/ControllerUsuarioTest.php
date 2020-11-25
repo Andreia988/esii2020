@@ -7,7 +7,7 @@ require_once('../controllers/Usuario/ControllerUsuario.php');
 
 use PHPUnit\Framework\TestCase;
 use models\Usuario;
-use controller\ControllerUsuario;
+use controllers\ControllerUsuario;
 
 class ControllerUsuarioTest extends TestCase{
    /** @test */
@@ -29,18 +29,18 @@ class ControllerUsuarioTest extends TestCase{
       unset($usuario);
       unset($daoUsuario);
    }
-
    public function testIncluirUsuario(){
-      $ctrlUsuario = new ControllerUsuario();
+    $ctrlUsuario = new ControllerUsuario();
 
-      try{
-         $this->assertEquals(
-            TRUE,
-            $ctrlUsuario->salvarUsuario("Leandro Machado", "leandro@gmail.com","(49)96632-7854", "leandro", "abc")
-         );
-      }catch(\Exception $e){
-         $this->fail($e->getMessage());
-      }
-   }
+    try{
+       $this->assertEquals(
+          TRUE,
+          $ctrlUsuario->salvarUsuario("Leandro Machado", "leandro@gmail.com","(49)96632-7854", "leandro", "abc")
+       );
+    }catch(\Exception $e){
+       $this->fail($e->getMessage());
+    }
+ }
+   
 }
 ?>

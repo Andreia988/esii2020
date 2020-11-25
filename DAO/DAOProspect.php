@@ -6,6 +6,7 @@ $root = $_SERVER['DOCUMENT_ROOT'].$separador;
 require_once($root .'prospectcolector/models/Prospect.php');
 
 use models\Prospect;
+use mysqli_sql_exception;
 
 /**
  * Esta classe é reponsável por fazer a comunicação com o banco de dados,
@@ -175,6 +176,7 @@ class DAOProspect{
          die;
       }
    }
+   
 }
 
 ?>
