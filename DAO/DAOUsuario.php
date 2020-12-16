@@ -1,7 +1,10 @@
 <?php
 namespace DAO;
 mysqli_report(MYSQLI_REPORT_STRICT);
-require_once('../models/Usuario.php');
+$ds = DIRECTORY_SEPARATOR;
+$base_dir = dirname(__FILE__).$ds;
+
+require('../models/Usuario.php');
 use models\Usuario;
 use mysqli_sql_exception;
 

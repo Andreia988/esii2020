@@ -31,7 +31,7 @@ use DAO\DAOProspect;
 public function SalvarProspect($nome,$email,$celular,$facebook,$whatsapp){
    $daoProspect= new DAOProspect();
    try{
-   $daoProspect->SalvarProspect($nome,$email,$celular,$facebook,$whatsapp);
+      $daoProspect->incluirProspect($nome,$email,$celular,$facebook,$whatsapp);
    
    }catch(\Exception $e){
        throw new \Exception($e->getMessage());
@@ -41,7 +41,8 @@ public function SalvarProspect($nome,$email,$celular,$facebook,$whatsapp){
    /**
     * Exclui um prospect previamente cadastrado do banco de dados
     * @param string $codProspect Código do Prospect que deve ser excluído
-    * @return Prospect;
+    * @return TRUE|Exception Retorna TRUE caso a exclusão tenha sido bem sucedida
+    * ou uma Exception caso não tenha.
     */
     public function excluirProspect($codProspect){
       $daoProspect= new DAOProspect();
